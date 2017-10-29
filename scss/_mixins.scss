@@ -1,0 +1,26 @@
+/* Mixins */
+@mixin fa($content: '.fa-bars'){ /* fa('.fa-shopping-bag'); */
+    &:before{
+        @extend .fa;
+        @extend #{$content};
+        margin-right: 5px;
+    }
+};
+
+@mixin fa-after($content: '.fa-bars'){ /* fa('.fa-shopping-bag'); */
+    &:after{
+        @extend .fa;
+        @extend #{$content}:before;
+        margin-left: 5px;
+    }
+};
+/* // Миксин для выравнивания debuggera по фикс сетке BS
+@mixin wrapper(){
+    max-width: 1140px;
+    margin: 0 auto;
+    @include wrapper-full();
+
+    @include from-to(992px, 1200px){max-width: 960px;};
+    @include from-to(768px, 992px){max-width: 720px;};
+    @include from-to(576px,768px){max-width: 540px;};
+}*/
